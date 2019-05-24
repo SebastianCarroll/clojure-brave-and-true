@@ -193,6 +193,34 @@ Macros: similar as they don't evaluate all their operands and also can't be pass
 5. Body
 
 ### Arity and parameters
+Can define multiple arity on fns
+With arity overloading
+can be completely unrelated though not advised
+rest parameter is & and converts any remaining params to a list
+
+### Destructuring
+Bind names to values based on strucutre of paramter
+Lists, maps all work
+Can be used with & as well
+Use :keys to get all bindings
+Retain access to original map with :as
+e.g
+(defn location
+    [{:keys [lat long] :as orig-map}]
+    ;;do something
+    )
+
+All fns are created equal. No higher priviledge on the + or the defn you create yourself
+This is the heart of simplicity. Clojure doesn't care about order or hierarchy or special fns. Give it a fn it will apply it and move on
+
+### Anonymous fns
+(fn ... )
+ ```#(.. %...)```
+ %1 %2 are the args and % => %1
+These are possible by reader macros. Not sure what they are yet
+
+Can return fns
+
 
 
 
