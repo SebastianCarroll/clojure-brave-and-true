@@ -2,6 +2,11 @@
   (:require [clojure.test :refer :all]
             [clojure-noob.core :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+
+
+(deftest insert-method
+  (testing "the I can insert and get "
+    (is (= 0 
+           (do 
+             (insert-cache "key1" 0)
+             (get-cache "key1"))))))
